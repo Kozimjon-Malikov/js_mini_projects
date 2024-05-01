@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Peasy Contact form</title>
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>
+            <code>Easy - Peasy Contact form  🤔</code>
+        </h2>
+        <form action="#">
+            <input type="text" name="fname" autocomplete="off" id="fname" placeholder="type your name">
+            <input type="text" name="fname" autocomplete="off" id="fage" placeholder="type your age">
+            <input type="text" name="fname" autocomplete="off" id="isMerried" placeholder="are you merried 💍 (yes/no)">
+            <button type="button" class="btn btn-success">SUBMIT</button>
+            <button type="button" class="btn btn-alert">CANCEL</button>
+        </form>
+        <div class="result">
+            <h2 id="name"></h2>
+            <h2 id="age"></h2>
+            <h2 id="merried"></h2>
+        </div>
+        <p class="message hidden"></p>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
