@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        button {
+            padding: 1rem 1.5rem;
+            background-color: #fff;
+            border-radius: 16px;
+            font-size: 1rem;
+            border: none;
+            margin: 0px 1rem;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            background-image: linear-gradient(to top, #3f8510, rgb(21, 145, 12));
+        }
+
+        .btns {
+            display: inline-block;
+            margin: 1rem auto;
+        }
+
+        .modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            background-color: #fff;
+            padding: 2rem;
+            line-height: 120%;
+            border-radius: 10px;
+            z-index: 2;
+            transition: 0.2s all linear;
+        }
+
+        .modal_title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 0.5rem 0 0;
+            margin: 1rem 0px;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(1px);
+            z-index: 1;
+        }
+
+        h1 {
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="btns">
+            <button>Show modal 1</button>
+            <button>Show modal 2</button>
+            <button>Show modal 3</button>
+        </div>
+        <div class="modal hidden">
+            <div class="modal_title">
+                <h2>I am modal window 😍 </h2>
+                <h1 id="close">&times;</h1>
+            </div>
+            <br>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi quae, omnis doloremque ad culpa aut
+                unde. Nobis molestias itaque corrup Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur
+                optio dolorum eligendi quis nihil quod aspernatur vel ad dicta commodi! Similique quae vel consequuntur
+                ad error dolorem ut dolor commodi?ti minus, nam tempore voluptatem unde illo doloremque reprehenderit
+                iusto non?</p>
+        </div>
+        <div class="overlay hidden"></div>
+    </div>
+    <script>
+        const btns = document.querySelectorAll('button'),
+            modal = document.querySelector('.modal'),
+            overlay = document.querySelector('.overlay'),
+            close = document.querySelector('#close');
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                show()
+            })
+        })
+        close.addEventListener('click', hide)
+        function show() {
+            modal.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+        }
+        function hide() {
+            modal.classList.add('hidden');
+            overlay.classList.add('hidden');
+        }
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('overlay')) {
+                hide()
+            }
+        })
+    </script>
+</body>
+
+</html>
