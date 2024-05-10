@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    background: #070023;
+}
+i{
+    color: #fff;
+    font-size: 1.2rem;
+    position: absolute;
+    top: -20px;
+    animation: fall  4s forwards linear;
+}
+i:hover{
+    transform: translateX(-3px);
+    scale: 1.09;
+}
+.fa-youtube{
+    left: 20px;
+}
+.fa-telegram{
+    left: 40px;
+}
+.fa-instagram{
+    left: 60px;
+}
+.fa-twitter{
+    left: 80px;
+}
+.fa-free-code-camp{
+    left: 100px;
+}
+
+@keyframes fall {
+    to{
+        transform: translateY(105vh);
+    }
+}

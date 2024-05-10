@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😍 Social Media Snow Effect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <script>
+        setInterval(createSnow, 100)
+        function createSnow() {
+            let youtobe = document.createElement('i');
+            let instagram = document.createElement('i');
+            let twitter = document.createElement('i');
+            let telegram = document.createElement('i');
+            let code = document.createElement('i');
+            // ✅ youtobe 
+            youtobe.classList.add('fa-brands');
+            youtobe.classList.add('fa-youtube');
+            youtobe.style.left = Math.random() * window.innerWidth + 'px'
+            youtobe.style.fontSize = Math.random() * 10 * 2 + 'px'
+            youtobe.style.opacity = Math.random() * 10;
+            youtobe.style.animationDuration = Math.random() * 3 + 2 + 's'
+            document.body.append(youtobe)
+            // ✅ instagram 
+            instagram.classList.add('fa-brands');
+            instagram.classList.add('fa-instagram');
+            instagram.style.left = 20 + Math.random() * window.innerWidth + 'px'
+            instagram.style.fontSize = Math.random() * 10 * 2 + 'px'
+            instagram.style.opacity = Math.random() * 10;
+            instagram.style.animationDuration = Math.random() * 3 + 2 + 's'
+            document.body.append(instagram)
+            // ✅ twitter 
+            twitter.classList.add('fa-brands');
+            twitter.classList.add('fa-twitter');
+            twitter.style.left = 20 + Math.random() * window.innerWidth + 'px'
+            twitter.style.fontSize = Math.random() * 10 * 2 + 'px'
+            twitter.style.opacity = Math.random() * 10;
+            twitter.style.animationDuration = Math.random() * 3 + 2 + 's'
+            document.body.append(twitter)
+            // ✅ telegram
+            telegram.classList.add('fa-brands');
+            telegram.classList.add('fa-telegram');
+            telegram.style.left = 20 + Math.random() * window.innerWidth + 'px'
+            telegram.style.fontSize = Math.random() * 20 * 2 + 'px'
+            telegram.style.opacity = Math.random() * 10;
+            telegram.style.animationDuration = Math.random() * 3 + 2 + 's'
+            document.body.append(telegram)
+            // ✅ free code camp  
+            code.classList.add('fa-brands');
+            code.classList.add('fa-free-code-camp');
+            code.style.left = 20 + Math.random() * window.innerWidth + 'px'
+            code.style.fontSize = Math.random() * 10 * 3 + 'px'
+            code.style.opacity = Math.random() * 10;
+            code.style.animationDuration = Math.random() * 3+ 2 + 's'
+            document.body.append(code)
+            setTimeout(() => {
+                snow.remove();
+            }, 4000)
+        }
+    </script>
+</body>
+
+</html>
