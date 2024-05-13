@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😍 animatedLists</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <span></span>
+            <a>IT Systems </a>
+            <a>AutomationSystems </a>
+            <a>Software Development </a>
+            <a>Space Engineering </a>
+            <a>Education </a>
+        </div>
+    </div>
+    <script>
+        let span = document.querySelector('span');
+        let items = document.querySelectorAll('a');
+        items.forEach(elements => {
+            elements.addEventListener('click', () => {
+                hide();
+                elements.classList.add('active');
+                span.style.opacity = '1';
+                span.style.left=10+elements.clientWidth+'px';
+                span.style.top=elements.offsetTop-10+'px';
+                console.log(elements.clientTop)
+            })
+        })
+
+        function hide() {
+            items.forEach(e => {
+                e.classList.remove('active')
+            })
+        }
+    </script>
+</body>
+
+</html>
