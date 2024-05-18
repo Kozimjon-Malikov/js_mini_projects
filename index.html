@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐱‍👤🐱‍👤 Counter Down</title>
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="items">
+                <h4 id="days">0</h4>
+                <h2>Days</h2>
+            </div>
+            <div class="items">
+                <h4 id="hours">0</h4>
+                <h2>Hours</h2>
+            </div>
+            <div class="items">
+                <h4 id="minutes">0</h4>
+                <h2>Minutes</h2>
+            </div>
+            <div class="items">
+                <h4 id="seconds">0</h4>
+                <h2>Seconds</h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        function timer() {
+            //😎 what time will be end 
+            let endDate = new Date("31 December 2024");
+            let endTime = endDate.getTime();
+            //😎 currentTime 
+            let currentTime = new Date().getTime();
+            // how many milliseconds~ until end day by cutting from endate 
+            let diff = endDate - currentTime;
+            let thisDay = Math.floor(diff / 1000 / 60 / 60 / 24);
+            let thisHours = Math.floor(diff / 1000 / 60 / 60) % 24;
+            let thisMin = Math.floor(diff / 1000 / 60) % 60;
+            let thisSecond = Math.floor(diff / 1000) % 60;
+            //🔥  DOM changes 
+            document.querySelector('#days').innerHTML = thisDay
+            document.querySelector('#hours').innerHTML = thisHours
+            document.querySelector('#minutes').innerHTML = thisMin
+            document.querySelector('#seconds').innerHTML = thisSecond
+            if (thisSecond < 10) {
+                document.querySelector('#seconds').innerHTML = `0${thisSecond}`
+            } else if (thisMin < 10) {
+                document.querySelector('#minutes').innerHTML = `0${thisMin}`
+            } else if (thisHours < 10) {
+                document.querySelector('#hours').innerHTML = `0${thisHours}`
+            } else if (thisDay < 10) {
+                document.querySelector('#days').innerHTML = `0${thisDay}`
+            }
+            else if (thisDay == 0 && thisHours == 0 && thisMin == 0 && thisSecond == 0) {
+                document.querySelector('.box').innerHTML = `<h1>GoodBye</h1>`
+            }
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            setInterval(timer, 1000)
+        })
+
+    </script>
+</body>
+
+</html>
