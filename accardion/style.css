@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(300deg, #e0e0e0, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.accordion{
+    width: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.items label{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    position: relative;
+    background-color: #273546;
+    color: #fff;
+    transition: all 0.2s linear;
+}
+.items label:hover{
+    background-color: #151b22;
+    cursor: pointer;
+
+}
+.items label h2{
+    font-size: 1.8rem;
+    padding: 1rem 0;
+}
+.items label h2::after{
+    content: "+";
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s linear;
+}
+.items p{
+    display: none;
+    padding: 1rem;
+    max-width: 780px;
+    text-align: justify;
+}
+.items input[type="checkbox"]{
+    display: none;
+}
+.items input[type="checkbox"]:checked~p{
+    display: flex;
+}
+.items input[type="checkbox"]:checked~label h2::after{
+    content: "-";
+}
